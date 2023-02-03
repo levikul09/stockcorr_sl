@@ -29,8 +29,7 @@ if button:
         stocks.append(i)
 
     df = pdr.get_data_yahoo(stocks, start, end)
-    df
-
+    
     corr_data = df['Adj Close'].pct_change().corr()
 
 
