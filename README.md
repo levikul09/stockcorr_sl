@@ -5,5 +5,7 @@
 
 Check out the correlation between stocks.
 
+Example:
+
 ![example image](https://user-images.githubusercontent.com/123877524/216785792-5188f6fe-0ee9-40fe-87e8-a7c01737032b.png)
 
