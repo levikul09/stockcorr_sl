@@ -11,14 +11,21 @@ import pytz
 yf.pdr_override()
 #tz = pytz.timezone("America/New_York")
 
+st.title(':blue[Stock] correlation viewer 📈')
+
+st.subheader('Select starting date')
+in_date = st.date_input('Select starting date',label_visibility="hidden")
+
 end = datetime.now()
-start = end - timedelta(days=4000) #We always have more than 10 years of data from today
+#start = end - timedelta(days=4000) #We always have more than 10 years of data from today
 
 #end = tz.localize(datetime.now())
 #start = tz.localize(end - timedelta(days=3000))
 
-input= st.text_input(label='''List stock tickers. \n 
-Seperate them by commas WITHOUT spaces, e.g. MSFT, AAPL, GOOG, META, ADBE, IBM''')
+
+st.subheader('List stock tickers')
+input= st.text_input(label='''Seperate them by commas WITHOUT spaces, e.g. MSFT, AAPL, GOOG, META, ADBE, IBM. \n
+If you encounter some issues, please refresh the page and enter the tickers one by one.''')
 button = st.button("OK")
 
 input=input.split(",")
@@ -28,8 +35,8 @@ if button:
     for i in input:
         stocks.append(i)
 
-    df = pdr.get_data_yahoo(stocks, start, end)
-    
+    df = pdr.get_data_yahoo(stocks, in_date, end)
+
     corr_data = df['Adj Close'].pct_change().corr()
 
 
