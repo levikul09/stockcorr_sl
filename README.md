@@ -1,6 +1,8 @@
 
 # Stock correlation screener 📈
 
+Try it out here 👇
+
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://levikul09-stockcorr-sl-app-dbnyrt.streamlit.app/)
 
 Check out the correlation between stocks.
